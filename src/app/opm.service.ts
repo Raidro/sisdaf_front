@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class OpmService{
 
-private readonly URL_BUSCA_TODOS =`${environment.apiUrl}/opms`;
+private readonly URL_BUSCA_TODOS = `${environment.apiUrl}/opms`;
 private readonly URL_SALVA_OPM = `${environment.apiUrl}/opms`;
 
-constructor(private http: HttpClient){}
+constructor(private http: HttpClient) {}
 
 //busca todas as opms
 
@@ -19,7 +19,8 @@ constructor(private http: HttpClient){}
 
   }
 
-  salvaOpm(opm: any):Promise<any>{
+  //salva Opm
+  salvaOpm(opm: any): Promise <any> {
     return this.http.post(this.URL_SALVA_OPM, opm).toPromise();
   }
 

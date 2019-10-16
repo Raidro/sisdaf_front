@@ -32,7 +32,7 @@ buscaOpm(){
   this.service.buscaTodos().then(dados =>{
 
     this.opms = dados
-
+    console.log(this.opms);
   });
 }
 
