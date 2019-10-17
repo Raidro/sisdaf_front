@@ -1,4 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { OpmService } from './opm.service';
+import { OnInit, Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+
+
+class Opm {
+  id: number;
+  nome: string;
+  sigla: string;
+}
 
 @Component({
   selector: 'app-opm',
@@ -7,9 +17,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpmComponent implements OnInit {
 
-  constructor() { }
+  opm = new Opm();
+  opms = [];
 
-  ngOnInit() {
+  constructor(private service: OpmService) { }
+
+  ngOnInit(): void {
+    this.buscaOpm();
+
   }
+
+  buscaOpm() {
+    this.service.buscaTodos().then(dados => {
+
+      this.opms = dados
+      console.log(this.opms);
+    });
+  }
+
+  salvar(formOpm: NgForm) {
+
+    this.opm.nome = formOpm.value.nome;
+    this.opm.sigla = formOpm.value.sigla;
+
+    this.service.salvaOpm(this.opm).then(o => {
+
+      this.buscaOpm();
+    });
+
+    this.opm = new Opm();
+
+  }
+
 
 }
