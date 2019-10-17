@@ -3,15 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { OpmModule } from './opm/opm.module';
+import { ModeloModule } from './modelo/modelo.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    OpmModule
+    OpmModule,
+    ModeloModule
   ],
   providers: [],
   bootstrap: [AppComponent]
