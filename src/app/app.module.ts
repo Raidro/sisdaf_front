@@ -4,20 +4,20 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { OpmService } from './opm/opm.service';
-import { OpmComponent } from './opm/opm.component';
+import { OpmModule } from './opm/opm.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    OpmComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OpmModule
   ],
-  providers: [OpmService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
