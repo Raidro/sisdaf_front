@@ -8,7 +8,15 @@
           <!-- inicio input de nome da opm -->
           <div class="form-group">
             <label for="nomeOpm">Nome da Opm</label>
-            <input id="nomeOpm" type="text" class="form-control" name="nomeOpm" required autofocus />
+            <input
+            id="nomeOpm"
+            type="text"
+            class="form-control"
+            name="nomeOpm"
+            #inputNomeOpm="ngModel"
+            [(ngModel)]="opm.nome"
+            required
+            autofocus />
             <div class="invalid-feedback">
               <div>Nome da Opm é necessaria!</div>
             </div>
@@ -18,7 +26,14 @@
           <!-- inicio input de sigla -->
           <div class="form-group">
             <label for="sigla">Sigla</label>
-            <input id="sigla" type="text" class="form-control" name="sigla" required />
+            <input
+            id="sigla"
+            type="text"
+            class="form-control"
+            name="sigla"
+            #inputSigla="ngModel"
+            [(ngModel)]="opm.sigla"
+            required />
             <div class="invalid-feedback">
               <div>Sigla é necessaria!</div>
             </div>
