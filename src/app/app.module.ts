@@ -5,10 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { OpmService } from './opm.service';
+import { OpmComponent } from './opm/opm.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OpmComponent
   ],
   imports: [
     BrowserModule,
