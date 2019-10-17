@@ -1,34 +1,52 @@
-<div class="jumbotron">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-8 offset-md-2">
-              <h3>Rigistro da OPM</h3>
-              <form >
-                  <div class="form-group">
-                      <label for="nomeOpm">Nome da Opm</label>
-                      <input type="text" class="form-control" name="nomeOpm"  required />
-                      <div  class="invalid-feedback">
-                          <div>Nome da Opm é necessaria!</div>
-                      </div>
-                  </div>
-
-                  <div class="form-group">
-                      <label for="sigla">Sigla</label>
-                      <input type="text" class="form-control" name="sigla"  required />
-                      <div  class="invalid-feedback">
-                          <div >Sigla é necessaria!</div>
-                      </div>
-                  </div>
-
-                  <div class="form-group">
-                      <button class="btn btn-primary">Cadastrar</button>
-                  </div>
-              </form>
+<div class="jumbotron container" style="margin-top: 50px;">
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h3>Rigistro da OPM</h3>
+        <form autocomplete="off" #opmForm = "ngForm" (submit)="salvar(opmForm)">
+          <input type="hidden" name="id" #inputId="ngModel" [(ngModel)]="opm.id" >
+          <!-- inicio input de nome da opm -->
+          <div class="form-group">
+            <label for="nomeOpm">Nome da Opm</label>
+            <input id="nomeOpm" type="text" class="form-control" name="nomeOpm" required autofocus />
+            <div class="invalid-feedback">
+              <div>Nome da Opm é necessaria!</div>
+            </div>
           </div>
+          <!-- fim input de nome da opm -->
+
+          <!-- inicio input de sigla -->
+          <div class="form-group">
+            <label for="sigla">Sigla</label>
+            <input id="sigla" type="text" class="form-control" name="sigla" required />
+            <div class="invalid-feedback">
+              <div>Sigla é necessaria!</div>
+            </div>
+          </div>
+          <!-- fim input de sigla -->
+
+          <div class="form-group">
+            <div class="row">
+
+              <!-- inicio do botão de cadastrar -->
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary btn-block">
+                  <i class="fas fa-save"></i> Cadastrar
+                </button>
+              </div>
+              <!-- fim do botão de cadastrar -->
+
+              <!-- inicio do botão de limpar -->
+              <div class="col-6">
+                <button type="reset" class="btn btn-danger btn-block">
+                  <i class="fas fa-redo-alt"></i> Limpar
+                </button>
+              </div>
+              <!-- fim do botão de limpar -->
+            </div>
+          </div>
+        </form>
       </div>
+    </div>
   </div>
 </div>
-
-
-
-
