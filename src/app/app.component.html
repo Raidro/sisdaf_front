@@ -7,13 +7,13 @@
           <input type="hidden" name="id" #inputId="ngModel" [(ngModel)]="opm.id" >
           <!-- inicio input de nome da opm -->
           <div class="form-group">
-            <label for="nomeOpm">Nome da Opm</label>
+            <label for="nome">Nome da Opm</label>
             <input
-            id="nomeOpm"
+            id="nome"
             type="text"
             class="form-control"
-            name="nomeOpm"
-            #inputNomeOpm="ngModel"
+            name="nome"
+            #inputNome="ngModel"
             [(ngModel)]="opm.nome"
             required
             autofocus />
