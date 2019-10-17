@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { OpmModule } from './opm/opm.module';
@@ -13,8 +11,6 @@ import { OpmModule } from './opm/opm.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
     OpmModule
   ],
   providers: [],
