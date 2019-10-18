@@ -1,1 +1,81 @@
-<p>tela-modelo works!</p>
+<div class="jumbotron container" style="margin-top: 50px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h3>Rigistro do Modelo da Arma</h3>
+        <form autocomplete="off" #modeloForm="ngForm" (submit)="salvar(modeloForm)">
+          <input type="hidden" name="id" #inputId="ngModel" [(ngModel)]="modelo.id">
+
+          <!-- inicio input de tipo do modelo -->
+          <div class="form-group">
+            <label for="tipo">Tipo de Arma</label>
+            <input id="tipo" type="text" class="form-control" name="tipo" #inputTipo="ngModel" [(ngModel)]="modelo.tipo"
+              required autofocus />
+            <div class="invalid-feedback">
+              <div>Tipo é necessario!</div>
+            </div>
+          </div>
+          <!-- fim input de tipo do modelo -->
+
+
+
+          <!-- inicio input de calibre do modelo -->
+          <div class="form-group">
+            <label for="calibre">Calibre da Arma</label>
+            <input id="calibre" type="text" class="form-control" name="calibre" #inputCalibre="ngModel"
+              [(ngModel)]="modelo.calibre" required autofocus />
+            <div class="invalid-feedback">
+              <div>Calibre do modelo é necessaria!</div>
+            </div>
+          </div>
+          <!-- fim input de calibre do modelo -->
+
+
+
+          <!-- inicio input de nome da opm -->
+          <div class="form-group">
+            <label for="nome">Nome do Modelo da Arma</label>
+            <input id="nome" type="text" class="form-control" name="nome" #inputNome="ngModel" [(ngModel)]="modelo.nome"
+              required autofocus />
+            <div class="invalid-feedback">
+              <div>Nome do modelo é necessaria!</div>
+            </div>
+          </div>
+          <!-- fim input de nome da opm -->
+
+          <!-- inicio input de fabricante -->
+          <div class="form-group">
+            <label for="fabricante">Fabricante da Arma</label>
+            <input id="fabricante" type="text" class="form-control" name="fabricante" #inputFabricante="ngModel"
+              [(ngModel)]="modelo.fabricante" required />
+            <div class="invalid-feedback">
+              <div>Fabricante é necessaria!</div>
+            </div>
+          </div>
+          <!-- fim input de fabricante -->
+
+          <div class="form-group">
+            <div class="row">
+
+              <!-- inicio do botão de cadastrar -->
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary btn-block">
+                  <i class="fas fa-save"></i> Cadastrar
+                </button>
+              </div>
+              <!-- fim do botão de cadastrar -->
+
+              <!-- inicio do botão de limpar -->
+              <div class="col-6">
+                <button type="reset" class="btn btn-danger btn-block">
+                  <i class="fas fa-redo-alt"></i> Limpar
+                </button>
+              </div>
+              <!-- fim do botão de limpar -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
