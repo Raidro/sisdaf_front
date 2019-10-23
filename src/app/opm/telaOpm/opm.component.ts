@@ -15,6 +15,7 @@ class Opm {
   templateUrl: './opm.component.html',
   styleUrls: ['./opm.component.css']
 })
+
 export class OpmComponent implements OnInit {
 
   opm = new Opm();
