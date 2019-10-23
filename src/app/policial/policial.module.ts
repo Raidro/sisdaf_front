@@ -6,9 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { PolicialService } from './tela-policial/policial.service';
 
 
+
 @NgModule({
   declarations: [
-    PolicialComponent
+    PolicialComponent,
+
   ],
   imports: [
     CommonModule,

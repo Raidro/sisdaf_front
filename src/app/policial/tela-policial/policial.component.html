@@ -57,9 +57,9 @@
 
           <!-- inicio do dropdown da opm -->
           <div class="form-group">
-            <label for="opm">OPM</label>
+            <label for="opm">OPM: </label>
             <!-- <p-dropdown [options]="OPM" [(ngModel)]="policial.Opm" placeholder="Selecione uma OPM" optionLabel="opm" [showClear]="true"></p-dropdown> -->
-            <select>
+            <select  class="form-control form-control-lg">
               <option *ngFor="let opm of opms" value= {{opm.id}}>
                 {{opm.sigla}}
               </option>
