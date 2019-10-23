@@ -10,7 +10,7 @@ class Policial {
   matricula: string;
   cpf: string;
   cargo: string;
-  Opm: string;
+  Opm: number;
 }
 
 
