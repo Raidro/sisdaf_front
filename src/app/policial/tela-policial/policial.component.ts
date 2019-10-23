@@ -1,8 +1,7 @@
-import { OpmService } from './../../opm/telaOpm/opm.service';
 import { PolicialService } from './policial.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { OpmComponent } from 'src/app/opm/telaOpm/opm.component';
+
 
 
 class Policial {
@@ -11,7 +10,7 @@ class Policial {
   matricula: string;
   cpf: string;
   cargo: string;
-  Opm: OpmComponent;
+  Opm: {};
 }
 
 
@@ -25,10 +24,12 @@ export class PolicialComponent implements OnInit {
   policial = new Policial();
   policiais = [];
 
+
   constructor(private service: PolicialService) { }
 
   ngOnInit() {
     this.buscaPolicial();
+
   }
 
   buscaPolicial() {

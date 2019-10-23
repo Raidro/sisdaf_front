@@ -1,1 +1,101 @@
-<p>policial works!</p>
+<div class="jumbotron container" style="margin-top: 50px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h3>Rigistro do Policial </h3>
+        <form autocomplete="off" #policialForm="ngForm" (submit)="salvar(policialForm)">
+          <input type="hidden" name="id" #inputId="ngModel" [(ngModel)]="policial.id">
+
+          <!-- inicio input de Nome do policial -->
+          <div class="form-group">
+            <label for="nome">Nome do Policial</label>
+            <input id="nome" type="text" class="form-control" name="nome" #inputNome="ngModel"
+              [(ngModel)]="policial.nome" required autofocus />
+            <div class="invalid-feedback">
+              <div>Nome é necessario!</div>
+            </div>
+          </div>
+          <!-- fim input de nome do policial -->
+
+
+
+          <!-- inicio input de matricula do modelo -->
+          <div class="form-group">
+            <label for="matricula">Matricula</label>
+            <input id="matricula" type="text" class="form-control" name="matricula" #inputMatricula="ngModel"
+              [(ngModel)]="policial.matricula" required autofocus />
+            <div class="invalid-feedback">
+              <div>Matricula do policial é necessario!</div>
+            </div>
+          </div>
+          <!-- fim input de matricula do policial -->
+
+
+
+          <!-- inicio input de cpf -->
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input id="cpf" type="text" class="form-control" name="cpf" #inputCpf="ngModel" [(ngModel)]="policial.cpf"
+              required autofocus />
+            <div class="invalid-feedback">
+              <div>cpf é necessario!</div>
+            </div>
+          </div>
+          <!-- fim input de cpf -->
+
+          <!-- inicio input de cargo -->
+          <div class="form-group">
+            <label for="cargo">Cargo</label>
+            <input id="cargo" type="text" class="form-control" name="cargo" #inputCargo="ngModel"
+              [(ngModel)]="policial.cargo" required />
+            <div class="invalid-feedback">
+              <div>Cargo é necessario!</div>
+            </div>
+          </div>
+          <!-- fim input de cargo -->
+
+
+          <!-- inicio do dropdown da opm -->
+          <div class="form-group">
+            <label for="opm">OPM</label>
+            <!-- <p-dropdown [options]="OPM" [(ngModel)]="policial.Opm" placeholder="Selecione uma OPM" optionLabel="opm" [showClear]="true"></p-dropdown> -->
+            <select>
+              <option *ngFor="let opm of opms" value= {{opm.id}}>
+                {{opm.sigla}}
+              </option>
+            </select>
+            <div class="invalid-feedback">
+              <div>OPM é obrigatoria!</div>
+            </div>
+          </div>
+
+          <!-- fim do dropdown da opm -->
+
+
+
+
+          <div class="form-group">
+            <div class="row">
+
+              <!-- inicio do botão de cadastrar -->
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary btn-block">
+                  <i class="fas fa-save"></i> Cadastrar
+                </button>
+              </div>
+              <!-- fim do botão de cadastrar -->
+
+              <!-- inicio do botão de limpar -->
+              <div class="col-6">
+                <button type="reset" class="btn btn-danger btn-block">
+                  <i class="fas fa-redo-alt"></i> Limpar
+                </button>
+              </div>
+              <!-- fim do botão de limpar -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
