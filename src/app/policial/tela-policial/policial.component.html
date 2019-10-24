@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <h3>Rigistro do Policial </h3>
+        <h3>Registro do Policial </h3>
         <form autocomplete="off" #policialForm="ngForm" (submit)="salvar(policialForm)">
           <input type="hidden" name="id" #inputId="ngModel" [(ngModel)]="policial.id">
 
@@ -58,17 +58,14 @@
           <!-- inicio do dropdown da opm -->
           <div class="form-group">
             <label for="opm">OPM </label>
-            <select  class="form-control form-control-lg"  [(ngModel)]="policial.Opm">
+            <select  class="form-control form-control-lg" >
               <option *ngFor="let opm of opms" [value]= "opm.id">{{opm.sigla}}</option>
             </select>
             <div class="invalid-feedback">
               <div>OPM é obrigatoria!</div>
             </div>
           </div>
-
           <!-- fim do dropdown da opm -->
-
-
 
 
           <div class="form-group">
